@@ -1,38 +1,44 @@
 //Format Date & Time
-let now = new Date();
-let h2 = document.querySelector("h2");
-let date = now.getDate();
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[now.getDay()];
-let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
+function updateTime() {
+  let now = new Date();
+  let h2 = document.querySelector("#date"); // Update the selector to match your HTML
+  let date = now.getDate();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[now.getDay()];
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let hours = now.getHours();
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  let month = months[now.getMonth()];
+  h2.innerHTML = `${day}, ${date} ${month} ${hours}:${minutes}`;
 }
-let hours = now.getHours();
-let months = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-];
-let month = months[now.getMonth()];
-h2.innerHTML = `${day}, ${date} ${month} ${hours}:${minutes}`;
+
+updateTime();
+
+setInterval(updateTime, 60000);
 
 //function search(event)
 
