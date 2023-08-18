@@ -48,7 +48,9 @@ searchCity.addEventListener("submit", search);
 //Format Weather
 
 function showTemperature(response) {
-  let temperature = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+
+  let temperature = Math.round(celsiusTemperature);
   let humidity = response.data.main.humidity;
   let windSpeed = response.data.wind.speed;
   let description = response.data.weather[0].description;
@@ -114,16 +116,19 @@ let button = document.querySelector("#currentLocation");
 button.addEventListener("click", handleLocation);
 
 // Format Degrees °C to °F
+let celsiusTemperature = null;
+
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 19;
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
 function convertToCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 66;
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
@@ -132,4 +137,9 @@ fahrenheitLink.addEventListener("click", convertToFahrenheit);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
 
-getCity("Vancouver");
+function fetchDefaultTemperature() {
+  let defaultCity = "Vancouver";
+  getCity(defaultCity);
+}
+
+fetchDefaultTemperature();
