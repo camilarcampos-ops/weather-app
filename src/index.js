@@ -52,6 +52,7 @@ function showTemperature(response) {
   let humidity = response.data.main.humidity;
   let windSpeed = response.data.wind.speed;
   let description = response.data.weather[0].description;
+  let icon = response.data.weather[0].icon;
 
   let locationTemp = document.querySelector("#temperature");
   locationTemp.innerHTML = temperature;
@@ -67,6 +68,12 @@ function showTemperature(response) {
 
   let descriptionElement = document.querySelector("#temperature-description");
   descriptionElement.innerHTML = description.toUpperCase();
+
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${icon}@2x.png`
+  );
 }
 //Format Search Engine Functions
 
