@@ -24,27 +24,25 @@
   <body>
     <div class="weather-box">
       <section class="search">
-        <div>
-          <form id="search-city">
-            <input
-              type="search"
-              placeholder="Enter a city"
-              class="field"
-              autofocus="on"
-              autocomplete="off"
-              id="city-input"
-              required
-            />
-            <input type="submit" value="Search" class="search-button" />
-            <button class="search-button" id="currentLocation">
-              Current Location
-            </button>
-          </form>
-        </div>
+        <form id="search-city">
+          <input
+            type="search"
+            placeholder="Enter a city"
+            class="field"
+            autofocus="on"
+            autocomplete="off"
+            id="city-input"
+            required
+          />
+          <input type="submit" value="Search" class="search-button" />
+          <button class="search-button" id="currentLocation">
+            Current Location
+          </button>
+        </form>
       </section>
 
       <section class="weather-today">
-        <div class="container">
+        <div class="title-city-date">
           <div class="row title-city-date">
             <h1 id="city">VANCOUVER</h1>
             <h2 id="date">23th July 2023</h2>
@@ -73,51 +71,17 @@
           </div>
         </div>
       </section>
-
-      <section class="weather-next-days">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-md-2 box-day">
-              <img src="images/sunny.svg" alt="mostly-sunny" />
-              <h3>JULY 24th</h3>
-              <p>21°C</p>
-            </div>
-            <div class="col-md-2 box-day">
-              <img src="images/mostly-sunny.svg" alt="mostly-sunny" />
-              <h3>JULY 25th</h3>
-              <p>21°C</p>
-            </div>
-            <div class="col-md-2 box-day">
-              <img src="images/sunny.svg" alt="mostly-sunny" />
-              <h3>JULY 26th</h3>
-              <p>21°C</p>
-            </div>
-            <div class="col-md-2 box-day">
-              <img src="images/mostly-sunny.svg" alt="mostly-sunny" />
-              <h3>JULY 27th</h3>
-              <p>21°C</p>
-            </div>
-            <div class="col-md-2 box-day">
-              <img src="images/sunny.svg" alt="mostly-sunny" />
-              <h3>JULY 28th</h3>
-              <p>21°C</p>
-            </div>
-            <div class="col-md-2 box-day">
-              <img src="images/sunny.svg" alt="mostly-sunny" />
-              <h3>JULY 29th</h3>
-              <p>25°C</p>
-            </div>
-          </div>
-          <div class="row align-items-center">
-            <p>
-              <a href="https://github.com/camilarcampos-ops/weather-app"
-                ><strong>Open-source code,</strong></a
-              >
-              by Camila Rodrigues
-            </p>
-          </div>
+      <div class="weather-forecast" id="forecast"></div>
+      <div class="signature">
+        <div class="row">
+          <p>
+            <a href="https://github.com/camilarcampos-ops/weather-app"
+              ><strong>Open-source code,</strong></a
+            >
+            by Camila Rodrigues
+          </p>
         </div>
-      </section>
+      </div>
     </div>
     <script src="src/index.js"></script>
     <script

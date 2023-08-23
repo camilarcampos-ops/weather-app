@@ -1,4 +1,3 @@
-//Format Date & Time
 function updateTime() {
   let now = new Date();
   let h2 = document.querySelector("#date"); // Update the selector to match your HTML
@@ -40,6 +39,36 @@ updateTime();
 
 setInterval(updateTime, 60000);
 
+// Define a function to display the weather forecast
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col-2">
+        <div class="weather-forecast-date">${day}</div>
+        <img
+          src="https://openweathermap.org/img/wn/50d.png" // Update this URL
+          alt=""
+          width="42"
+        />
+        <div class="weather-forecast-temperatures">
+          <span class="weather-forecast-temperature-max"> 18° </span>
+          <span class="weather-forecast-temperature-min"> 12° </span>
+        </div>
+      </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 //function search(event)
 
 function search(event) {
@@ -80,9 +109,12 @@ function showTemperature(response) {
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
-    `https://openweathermap.org/img/wn/${icon}@2x.png`
+    `https://openweathermap.org/img/wn/${icon}.png` // Use the correct icon URL
   );
+
+  displayForecast(); // Call the displayForecast function here to display the forecast
 }
+
 //Format Search Engine Functions
 
 function handleCity(event) {
