@@ -9,12 +9,14 @@ h1 {
   font-size: 40px;
   line-height: 30px;
   margin-top: 50px !important;
+  margin-left: 15px;
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 400;
   margin-bottom: 30px;
+  margin-left: 15px;
 }
 
 h3 {
@@ -34,7 +36,6 @@ h3 {
 }
 
 .search {
-  margin: 20px 0;
   text-align: left;
 }
 
@@ -42,7 +43,7 @@ h3 {
   background: #885df1;
   border: none;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 500;
   height: 50px;
   padding: 15px 20px;
   color: #f9f7fe;
@@ -73,13 +74,13 @@ h3 {
 
 .units {
   position: relative;
-  top: -25px;
+  top: -35px;
   text-decoration: none;
 }
 
 .weather-details {
   padding: 0;
-  margin-top: 20px;
+  margin-top: 22px;
 }
 
 .units .active {
